@@ -170,6 +170,7 @@ fabric.properties
 *.layout
 *.depend
 *.cbp
+
 # generated directories
 bin/
 obj/
