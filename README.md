@@ -1,6 +1,6 @@
 # Sorting Algorithms Performance
 
-This repository contains C code to implement multiple sorting algorithms. It also includes a timer function to measure their execution times.
+This repository allows you to measure and compare the performance of different sorting algorithms using C code.
 
 ## Implemented Sorting Algorithms
 
@@ -29,7 +29,7 @@ The performance measurement results will be stored in `data.txt`.
 
 The performance graph is generated as `graph.png`. You can open this image to visualize the performance of sorting algorithms.
 
-4. To clean up the executable, use the following command:
+4. To clean up the executable file, use the following command:
 
 ```bash
 $ make clean
