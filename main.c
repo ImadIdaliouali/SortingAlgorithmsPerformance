@@ -1,59 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-void selectionSort(int arr[], int n)
-{
-    int i, j, min_idx;
-    for (i = 0; i < n - 1; i++)
-    {
-        min_idx = i;
-        for (j = i + 1; j < n; j++)
-            if (arr[j] < arr[min_idx])
-                min_idx = j;
-        if (min_idx != i)
-            swap(&arr[min_idx], &arr[i]);
-    }
-}
-
-void insertionSort(int arr[], int n)
-{
-    int i, key, j;
-    for (i = 1; i < n; i++)
-    {
-        key = arr[i];
-        j = i - 1;
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-    }
-}
-
-void printArray(int *arr, int n)
-{
-    int i;
-    printf("Arr = (");
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf(")\n");
-}
+#include "sorting.h"
+#include "utils.h"
 
 int main()
 {
-    int arr[5] = {2, 4, 1, 5, 3};
-    printArray(arr, 5);
-    insertionSort(arr, 5);
-    printArray(arr, 5);
+    srand(time(0));
+
+    int arrSize = 1000, nbIt = 20, it;
+    int *arr1, *arr2;
+    double mat[nbIt][3];
+    for (it = 0; it < nbIt; it++)
+    {
+        arr1 = generateRandomArray(arrSize);
+        arr2 = copyArray(arr1, arrSize);
+        mat[it][0] = arrSize;
+        mat[it][1] = timeTaken(arr1, arrSize, selectionSort);
+        mat[it][2] = timeTaken(arr2, arrSize, insertionSort);
+        arrSize += 1000;
+    }
+    printMatrix(mat, nbIt);
     return 0;
 }
