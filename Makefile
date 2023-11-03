@@ -8,7 +8,6 @@ all: $(TARGET)
 $(TARGET): $(SRC)
 	$(CC) $^ -o $@
 	./$@
-	gnuplot $(PLOT_SCRIPT)
 
 clean:
 	rm -f $(TARGET)

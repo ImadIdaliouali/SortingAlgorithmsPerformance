@@ -22,6 +22,7 @@ int main()
         arrSize += 1000;
     }
     saveDataToFile(mat, nbIt);
+    executeGnuplot();
     free(arr1);
     free(arr2);
     free(arr3);

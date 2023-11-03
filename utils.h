@@ -39,3 +39,12 @@ void saveDataToFile(double mat[][5], int n)
         fprintf(fptr, "%.0f, %f, %f, %f, %f\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3], mat[i][4]);
     fclose(fptr);
 }
+
+void executeGnuplot()
+{
+    const char *command = "gnuplot plot_script.txt";
+    FILE *pipe = popen(command, "r");
+    if (pipe == NULL)
+        perror("Error!");
+    pclose(pipe);
+}
