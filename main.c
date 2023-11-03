@@ -21,7 +21,7 @@ int main()
         mat[it][4] = timeTaken(arr4, arrSize, shellSort);
         arrSize += 1000;
     }
-    printMatrix(mat, nbIt);
+    saveDataToFile(mat, nbIt);
     free(arr1);
     free(arr2);
     free(arr3);

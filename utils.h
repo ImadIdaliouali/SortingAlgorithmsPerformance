@@ -21,14 +21,6 @@ double timeTaken(int *arr, int n, void fun(int *, int))
     return (double)(end - start) / CLOCKS_PER_SEC;
 }
 
-void printMatrix(double mat[][5], int n)
-{
-    int i;
-    printf("Size, Selection Sort, Insertion Sort, Bubble Sort, Shell Sort\n");
-    for (i = 0; i < n; i++)
-        printf("%.0f, %f, %f, %f, %f\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3], mat[i][4]);
-}
-
 int *copyArray(int *arr, int n)
 {
     int *cArr = (int *)malloc(n * sizeof(int));
@@ -36,4 +28,14 @@ int *copyArray(int *arr, int n)
     for (i = 0; i < n; i++)
         cArr[i] = arr[i];
     return cArr;
+}
+
+void saveDataToFile(double mat[][5], int n)
+{
+    FILE *fptr = fopen("data.txt", "w");
+    int i;
+    fprintf(fptr, "Size, Selection Sort, Insertion Sort, Bubble Sort, Shell Sort\n");
+    for (i = 0; i < n; i++)
+        fprintf(fptr, "%.0f, %f, %f, %f, %f\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3], mat[i][4]);
+    fclose(fptr);
 }
