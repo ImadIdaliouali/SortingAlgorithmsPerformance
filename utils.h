@@ -2,12 +2,32 @@
 #include <stdlib.h>
 #include <time.h>
 
-int *generateRandomArray(int n)
+int *generateRandomArray(int n, int caseType)
 {
     int *arr = (int *)malloc(n * sizeof(int));
     int i;
-    for (i = 0; i < n; i++)
-        arr[i] = rand();
+
+    switch (caseType)
+    {
+    //? Best Case
+    case 1:
+        for (i = 0; i < n; i++)
+            arr[i] = i;
+        break;
+
+    //? Average Case
+    case 2:
+        for (i = 0; i < n; i++)
+            arr[i] = rand();
+        break;
+
+    //? Worst Case
+    case 3:
+        for (i = 0; i < n; i++)
+            arr[i] = n - i - 1;
+        break;
+    }
+
     return arr;
 }
 
