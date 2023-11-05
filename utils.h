@@ -41,22 +41,23 @@ double timeTaken(int *arr, int n, void fun(int *, int))
     return (double)(end - start) / CLOCKS_PER_SEC;
 }
 
-int *copyArray(int *arr, int n)
+int *copyArray(int *arr, int start, int end)
 {
-    int *cArr = (int *)malloc(n * sizeof(int));
+    int length = end - start + 1;
+    int *cArr = (int *)malloc(length * sizeof(int));
     int i;
-    for (i = 0; i < n; i++)
-        cArr[i] = arr[i];
+    for (i = 0; i < length; i++)
+        cArr[i] = arr[start + i];
     return cArr;
 }
 
-void saveDataToFile(double mat[][5], int n)
+void saveDataToFile(double mat[][6], int n)
 {
     FILE *fptr = fopen("data.txt", "w");
     int i;
-    fprintf(fptr, "Size, Selection Sort, Insertion Sort, Bubble Sort, Shell Sort\n");
+    fprintf(fptr, "Size, Selection Sort, Insertion Sort, Bubble Sort, Shell Sort, Merge Sort\n");
     for (i = 0; i < n; i++)
-        fprintf(fptr, "%.0f, %f, %f, %f, %f\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3], mat[i][4]);
+        fprintf(fptr, "%.0f, %f, %f, %f, %f, %f\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3], mat[i][4], mat[i][5]);
     fclose(fptr);
 }
 
