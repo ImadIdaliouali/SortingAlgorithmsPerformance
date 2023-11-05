@@ -12,6 +12,7 @@ Here is a table that lists the sorting algorithms implemented in this project:
 | Selection Sort |
 | Bubble Sort    |
 | Shell Sort     |
+| Merge Sort     |
 
 ## Usage
 
