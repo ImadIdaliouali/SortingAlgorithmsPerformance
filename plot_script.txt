@@ -1,8 +1,5 @@
-# Set the terminal type (e.g., PNG or PDF)
-set terminal png size 800,600
-
-# Set the output file name
-set output 'graph.png'
+# Set the terminal type
+set terminal wxt persist
 
 # Set the title and labels for the plot
 set title "Sorting Algorithms Performance"
@@ -15,8 +12,8 @@ set grid
 # Define the data file to plot
 datafile = 'data.txt'
 
-# Define the plotting style (lines or points)
-set style data linespoints
+# Define the plotting style (lines)
+set style data lines
 
 # Plot the data: column 1 (Size) as x, column 2 (Selection) as y, column 3 (Insertion) as y2, column 4 (Bubble) as y3, column 5 (Shell) as y4, and column 6 (Merge) as y5
 plot datafile using 1:2 title "Selection Sort", datafile using 1:3 title "Insertion Sort", datafile using 1:4 title "Bubble Sort", datafile using 1:5 title "Shell Sort", datafile using 1:6 title "Merge Sort"
