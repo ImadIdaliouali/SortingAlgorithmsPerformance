@@ -6,7 +6,7 @@ This repository allows you to measure and compare the performance of different s
 
 Here is a table that lists the sorting algorithms implemented in this project:
 
-| Algorithms     |
+| Algorithms  s   |
 | -------------- |
 | Insertion Sort |
 | Selection Sort |
