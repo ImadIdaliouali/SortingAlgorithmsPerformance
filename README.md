@@ -37,3 +37,9 @@ The performance graph is generated as `graph.png`. You can open this image to vi
 ```bash
 $ make clean
 ```
+
+## Contributors
+
+<a href="https://github.com/ImadIdaliouali/SortingAlgorithmsPerformance/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ImadIdaliouali/SortingAlgorithmsPerformance" />
+</a>
